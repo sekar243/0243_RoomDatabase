@@ -5,6 +5,9 @@ import com.example.praktikum9.AplikasiSiswa
 import com.example.praktikum9.viewmodel.EntryViewModel
 import com.example.praktikum9.viewmodel.HomeViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.createSavedStateHandle
+import com.example.praktikum9.viewmodel.DetailViewModel
+import com.example.praktikum9.viewmodel.EditViewModel
 
 object PenyediaViewModel {
     val Factory = viewModelFactory {
@@ -16,7 +19,17 @@ object PenyediaViewModel {
         initializer {
             EntryViewModel(aplikasiSiswa().container.repositoriSiswa)
         }
+        //pertemuan 10
+        // edit : tambah initializer untuk DetailViewModel
+        initializer {
+            DetailViewModel(this.createSavedStateHandle(),
+                aplikasiSiswa().container.repositoriSiswa)
+        }
 
+        initializer {
+            EditViewModel(this.createSavedStateHandle(), aplikasiSiswa().container.repositoriSiswa
+            )
+        }
     }
 }
 
