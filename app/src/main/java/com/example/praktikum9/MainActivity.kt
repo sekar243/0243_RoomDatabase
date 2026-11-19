@@ -1,6 +1,6 @@
 package com.example.praktikum9
 
-import SiswaApp
+import com.example.praktikum9.uicontroller.SiswaApp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
